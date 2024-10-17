@@ -9,6 +9,10 @@ export const options = {
 const BASE_URL = 'http://localhost:9003';
 export default () => {
   const id = Math.floor(Math.random() * 1000000);
-  http.get(`${BASE_URL}/tick/${id}`);
-  sleep(1);
+  http.get(`${BASE_URL}/tick/${id}`, {
+    tags: {
+      name: "Ticks"
+    },
+  });
+  //sleep(1);
 };
